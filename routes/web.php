@@ -20,7 +20,7 @@ Route::post('post/store',[
 ]);
 
 /*ENVIAR LLAMADA AL CONTROLADOR PARA QUE VISUALICE LOS DATOS DE LA FUNCION INDEX*/
-Route::get('/','PostController@index');
+Route::get('post','PostController@index');
 
 Route::post('post/update/{id}',  [ 
     

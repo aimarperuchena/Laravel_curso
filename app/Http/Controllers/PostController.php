@@ -16,8 +16,9 @@ class PostController extends Controller
 
     public function index(){
         //LLAMARA AL MODELO PARA QUE DEVUELVA TODOS LOS DATOS
-        /*return Post::all();*/
-        return view('index');
+        $post = Post::all();
+        return view('index',compact('post'));
+        
     }
 
 
