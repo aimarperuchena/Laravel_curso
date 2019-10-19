@@ -23,13 +23,15 @@ Route::post('post/store',[
 Route::get('/','PostController@index');
 
 Route::post('post/update/{id}',  [ 
-    'middleware'    => 'auth',
-    'before'        => 'csrf',
+    
     'uses'          => 'PostController@update'
          
 ]);
 Route::post('post/store', [  
-    'middleware'    => 'auth',  
-    'before'        => 'csrf',  
+      
     'uses'          => 'PostController@store'
     ]);
+
+Route::post('post/delete/{id}',[
+    'uses' => 'PostController@detroy'
+]);
