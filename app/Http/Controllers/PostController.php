@@ -16,13 +16,13 @@ class PostController extends Controller
 
     public function index(){
         //LLAMARA AL MODELO PARA QUE DEVUELVA TODOS LOS DATOS
-       
-        return Post::all();
+        /*return Post::all();*/
+        return view('index');
     }
 
 
     public function create(){
-
+        
     }
 
     
