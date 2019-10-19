@@ -19,4 +19,5 @@ Route::post('post/store',[
     'uses'=>'PostController@store'
 ]);
 
+/*ENVIAR LLAMADA AL CONTROLADOR PARA QUE VISUALICE LOS DATOS DE LA FUNCION INDEX*/
 Route::get('/','PostController@index');
