@@ -1,5 +1,6 @@
-<h1>Curso openwevinars</h1>
+@extends('layout')
 
+@section('content')
 @if (count($post)>0)
 <h4>Listado de posts</h4>
 <ul>
@@ -14,3 +15,4 @@
 @while($i < 3)
     {{ $i++}}
 @endwhile
+@endsection
