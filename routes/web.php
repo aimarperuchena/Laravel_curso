@@ -21,3 +21,15 @@ Route::post('post/store',[
 
 /*ENVIAR LLAMADA AL CONTROLADOR PARA QUE VISUALICE LOS DATOS DE LA FUNCION INDEX*/
 Route::get('/','PostController@index');
+
+Route::post('post/update/{id}',  [ 
+    'middleware'    => 'auth',
+    'before'        => 'csrf',
+    'uses'          => 'PostController@update'
+         
+]);
+Route::post('post/store', [  
+    'middleware'    => 'auth',  
+    'before'        => 'csrf',  
+    'uses'          => 'PostController@store'
+    ]);

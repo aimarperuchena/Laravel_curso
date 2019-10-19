@@ -25,10 +25,24 @@ class PostController extends Controller
 
     }
 
-    public function store(Request $request){
-        
-    }
+    
 
+    public function store(Request $request){
+        $validator=Validator::make($request->all(),[
+            'title' => 'required|unique:posts|max:255',
+            'body' => 'required',
+        ]);
+
+        if($validator->fails()){
+            return redirect('post/create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $post=Post::create($request->except('csrf'));
+        return $post->toJson();
+
+    }
 
     public function show($id){
        /*SACAR INFORMACION DEL ID QUE QUIERESAS*/
@@ -39,5 +53,7 @@ class PostController extends Controller
     public function destroy($id){
 
     }
+
+
 
 }
